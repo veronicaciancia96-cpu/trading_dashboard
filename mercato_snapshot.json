@@ -1,0 +1,975 @@
+{
+  "risolti": {
+    "IT0003856405||LEONARDO": {
+      "simbolo": "LDO.MI",
+      "fonte": "ISIN",
+      "nome": "LEONARDO"
+    },
+    "US67066G1040||NVIDIA": {
+      "simbolo": "NVDA",
+      "fonte": "ISIN",
+      "nome": "NVIDIA Corporation"
+    },
+    "IT0004176001||PRYSMIAN": {
+      "simbolo": "PRY.MI",
+      "fonte": "ISIN",
+      "nome": "PRYSMIAN"
+    },
+    "US5949724083||MSTR": {
+      "simbolo": "MSTR",
+      "fonte": "ticker diretto",
+      "nome": "MSTR"
+    },
+    "US01609W1027||ALIBABA": {
+      "simbolo": "BABA",
+      "fonte": "ISIN",
+      "nome": "Alibaba Group Holding Limited"
+    },
+    "US02079K3059||ALPHABET": {
+      "simbolo": "GOOG",
+      "fonte": "ricerca nome",
+      "nome": "Alphabet Inc."
+    },
+    "US46222L1089||IONQ": {
+      "simbolo": "IONQ",
+      "fonte": "ticker diretto",
+      "nome": "IONQ"
+    }
+  },
+  "metriche": {
+    "GOOG": {
+      "prezzo": 358.16,
+      "rsi": 43.4,
+      "stoch_k": 31.3,
+      "stoch_d": 20.2,
+      "sup1": 352.742,
+      "res1": 364.175,
+      "supporti": [
+        352.742,
+        347.325
+      ],
+      "resistenze": [
+        364.175,
+        370.191
+      ],
+      "bb_inf": 346.367,
+      "bb_mid": 373.224,
+      "bb_sup": 400.081,
+      "bb_pct": 22.0,
+      "bb_pos": "⚪ dentro"
+    },
+    "NTAP": {
+      "prezzo": 161.61,
+      "rsi": 62.6,
+      "stoch_k": 44.3,
+      "stoch_d": 51.6,
+      "sup1": 157.66,
+      "res1": 164.31,
+      "supporti": [
+        157.66,
+        153.71
+      ],
+      "resistenze": [
+        164.31,
+        167.01
+      ],
+      "bb_inf": 106.81,
+      "bb_mid": 152.108,
+      "bb_sup": 197.406,
+      "bb_pct": 60.5,
+      "bb_pos": "⚪ dentro"
+    },
+    "RGTI": {
+      "prezzo": 20.98,
+      "rsi": 49.4,
+      "stoch_k": 26.2,
+      "stoch_d": 19.8,
+      "sup1": 20.192,
+      "res1": 21.857,
+      "supporti": [
+        20.192,
+        19.403
+      ],
+      "resistenze": [
+        21.857,
+        22.733
+      ],
+      "bb_inf": 14.918,
+      "bb_mid": 22.099,
+      "bb_sup": 29.28,
+      "bb_pct": 42.2,
+      "bb_pos": "⚪ dentro"
+    },
+    "PRY.MI": {
+      "prezzo": 143.9,
+      "rsi": 50.3,
+      "stoch_k": 42.3,
+      "stoch_d": 29.7,
+      "sup1": 141.633,
+      "res1": 145.833,
+      "supporti": [
+        141.633,
+        139.367
+      ],
+      "resistenze": [
+        145.833,
+        147.767
+      ],
+      "bb_inf": 138.084,
+      "bb_mid": 147.417,
+      "bb_sup": 156.751,
+      "bb_pct": 31.2,
+      "bb_pos": "⚪ dentro"
+    },
+    "LDO.MI": {
+      "prezzo": 53.48,
+      "rsi": 53.7,
+      "stoch_k": 67.9,
+      "stoch_d": 60.6,
+      "sup1": 52.517,
+      "res1": 54.703,
+      "supporti": [
+        52.517,
+        51.06
+      ],
+      "resistenze": [
+        54.703,
+        56.7
+      ],
+      "bb_inf": 49.867,
+      "bb_mid": 52.178,
+      "bb_sup": 54.489,
+      "bb_pct": 78.2,
+      "bb_pos": "⚪ dentro"
+    },
+    "DUOL": {
+      "prezzo": 122.63,
+      "rsi": 64.1,
+      "stoch_k": 81.4,
+      "stoch_d": 82.1,
+      "sup1": 118.217,
+      "res1": 126.017,
+      "supporti": [
+        118.217,
+        113.803
+      ],
+      "resistenze": [
+        126.017,
+        129.403
+      ],
+      "bb_inf": 100.776,
+      "bb_mid": 112.526,
+      "bb_sup": 124.275,
+      "bb_pct": 93.0,
+      "bb_pos": "⚪ dentro"
+    },
+    "HPQ": {
+      "prezzo": 25.24,
+      "rsi": 56.5,
+      "stoch_k": 22.5,
+      "stoch_d": 32.0,
+      "sup1": 24.403,
+      "res1": 25.693,
+      "supporti": [
+        24.403,
+        23.567
+      ],
+      "resistenze": [
+        25.693,
+        26.147
+      ],
+      "bb_inf": 19.917,
+      "bb_mid": 24.618,
+      "bb_sup": 29.319,
+      "bb_pct": 56.6,
+      "bb_pos": "⚪ dentro"
+    },
+    "IONQ": {
+      "prezzo": 57.85,
+      "rsi": 50.0,
+      "stoch_k": 22.5,
+      "stoch_d": 20.7,
+      "sup1": 55.93,
+      "res1": 59.15,
+      "supporti": [
+        55.93,
+        54.01
+      ],
+      "resistenze": [
+        59.15,
+        60.0
+      ],
+      "bb_inf": 46.3,
+      "bb_mid": 60.962,
+      "bb_sup": 75.624,
+      "bb_pct": 39.4,
+      "bb_pos": "⚪ dentro"
+    },
+    "UAL": {
+      "prezzo": 115.52,
+      "rsi": 63.2,
+      "stoch_k": 84.9,
+      "stoch_d": 63.2,
+      "sup1": 112.73,
+      "res1": 118.106,
+      "supporti": [
+        112.73,
+        110.315
+      ],
+      "resistenze": [
+        118.106
+      ],
+      "bb_inf": 89.45,
+      "bb_mid": 105.14,
+      "bb_sup": 120.829,
+      "bb_pct": 83.1,
+      "bb_pos": "⚪ dentro"
+    },
+    "UNI.MI": {
+      "prezzo": 24.2,
+      "rsi": 74.1,
+      "stoch_k": 95.1,
+      "stoch_d": 88.4,
+      "sup1": 23.733,
+      "res1": 24.533,
+      "supporti": [
+        23.733,
+        23.267
+      ],
+      "resistenze": [
+        24.533,
+        24.867
+      ],
+      "bb_inf": 19.794,
+      "bb_mid": 21.703,
+      "bb_sup": 23.611,
+      "bb_pct": 115.4,
+      "bb_pos": "🔴 sopra"
+    },
+    "DKNG": {
+      "prezzo": 29.0,
+      "rsi": 65.5,
+      "stoch_k": 82.9,
+      "stoch_d": 87.9,
+      "sup1": 28.397,
+      "res1": 29.867,
+      "supporti": [
+        28.397,
+        27.793
+      ],
+      "resistenze": [
+        29.867,
+        30.733
+      ],
+      "bb_inf": 22.511,
+      "bb_mid": 25.849,
+      "bb_sup": 29.186,
+      "bb_pct": 97.2,
+      "bb_pos": "⚪ dentro"
+    },
+    "IBM": {
+      "prezzo": 272.24,
+      "rsi": 53.0,
+      "stoch_k": 30.8,
+      "stoch_d": 35.1,
+      "sup1": 266.967,
+      "res1": 278.227,
+      "supporti": [
+        266.967,
+        261.693
+      ],
+      "resistenze": [
+        278.227,
+        284.213
+      ],
+      "bb_inf": 204.635,
+      "bb_mid": 269.187,
+      "bb_sup": 333.74,
+      "bb_pct": 52.4,
+      "bb_pos": "⚪ dentro"
+    },
+    "BBY": {
+      "prezzo": 78.53,
+      "rsi": 73.0,
+      "stoch_k": 97.6,
+      "stoch_d": 92.4,
+      "sup1": 77.42,
+      "res1": 79.67,
+      "supporti": [
+        77.42,
+        76.31
+      ],
+      "resistenze": [
+        79.67
+      ],
+      "bb_inf": 54.081,
+      "bb_mid": 69.012,
+      "bb_sup": 83.943,
+      "bb_pct": 81.9,
+      "bb_pos": "⚪ dentro"
+    },
+    "POOL": {
+      "prezzo": 195.0,
+      "rsi": 56.7,
+      "stoch_k": 89.2,
+      "stoch_d": 78.3,
+      "sup1": 191.583,
+      "res1": 197.813,
+      "supporti": [
+        191.583,
+        188.167
+      ],
+      "resistenze": [
+        197.813,
+        200.627
+      ],
+      "bb_inf": 173.908,
+      "bb_mid": 183.9,
+      "bb_sup": 193.892,
+      "bb_pct": 105.5,
+      "bb_pos": "🔴 sopra"
+    },
+    "NVDA": {
+      "prezzo": 205.19,
+      "rsi": 45.2,
+      "stoch_k": 17.8,
+      "stoch_d": 12.6,
+      "sup1": 202.5,
+      "res1": 207.945,
+      "supporti": [
+        202.5,
+        194.74
+      ],
+      "resistenze": [
+        207.945,
+        216.83
+      ],
+      "bb_inf": 199.678,
+      "bb_mid": 214.621,
+      "bb_sup": 229.563,
+      "bb_pct": 18.4,
+      "bb_pos": "⚪ dentro"
+    },
+    "BRO": {
+      "prezzo": 59.99,
+      "rsi": 55.2,
+      "stoch_k": 75.8,
+      "stoch_d": 76.6,
+      "sup1": 59.153,
+      "res1": 61.075,
+      "supporti": [
+        59.153,
+        58.317
+      ],
+      "resistenze": [
+        61.075,
+        69.08
+      ],
+      "bb_inf": 55.036,
+      "bb_mid": 57.795,
+      "bb_sup": 60.554,
+      "bb_pct": 89.8,
+      "bb_pos": "⚪ dentro"
+    },
+    "HPE": {
+      "prezzo": 48.17,
+      "rsi": 63.5,
+      "stoch_k": 41.9,
+      "stoch_d": 41.0,
+      "sup1": 46.167,
+      "res1": 49.977,
+      "supporti": [
+        46.167,
+        44.163
+      ],
+      "resistenze": [
+        49.977,
+        51.783
+      ],
+      "bb_inf": 27.165,
+      "bb_mid": 43.019,
+      "bb_sup": 58.872,
+      "bb_pct": 66.2,
+      "bb_pos": "⚪ dentro"
+    },
+    "PSA": {
+      "prezzo": 325.94,
+      "rsi": 68.9,
+      "stoch_k": 84.1,
+      "stoch_d": 81.2,
+      "sup1": 322.675,
+      "res1": 329.545,
+      "supporti": [
+        322.675,
+        291.99
+      ],
+      "resistenze": [
+        329.545
+      ],
+      "bb_inf": 287.203,
+      "bb_mid": 307.255,
+      "bb_sup": 327.308,
+      "bb_pct": 96.6,
+      "bb_pos": "⚪ dentro"
+    },
+    "BABA": {
+      "prezzo": 112.82,
+      "rsi": 29.6,
+      "stoch_k": 12.9,
+      "stoch_d": 8.5,
+      "sup1": 110.97,
+      "res1": 113.745,
+      "supporti": [
+        110.97
+      ],
+      "resistenze": [
+        113.745,
+        134.09
+      ],
+      "bb_inf": 111.948,
+      "bb_mid": 125.807,
+      "bb_sup": 139.666,
+      "bb_pct": 3.1,
+      "bb_pos": "⚪ dentro"
+    },
+    "MSTR": {
+      "prezzo": 123.97,
+      "rsi": 37.2,
+      "stoch_k": 19.9,
+      "stoch_d": 11.6,
+      "sup1": 118.18,
+      "res1": 129.29,
+      "supporti": [
+        118.18,
+        116.4
+      ],
+      "resistenze": [
+        129.29,
+        134.61
+      ],
+      "bb_inf": 103.907,
+      "bb_mid": 144.5,
+      "bb_sup": 185.093,
+      "bb_pct": 24.7,
+      "bb_pos": "⚪ dentro"
+    },
+    "A": {
+      "prezzo": 129.84,
+      "rsi": 56.5,
+      "stoch_k": 59.5,
+      "stoch_d": 62.1,
+      "sup1": 128.01,
+      "res1": 131.19,
+      "supporti": [
+        128.01,
+        120.99
+      ],
+      "resistenze": [
+        131.19,
+        137.85
+      ],
+      "bb_inf": 104.631,
+      "bb_mid": 126.058,
+      "bb_sup": 147.485,
+      "bb_pct": 58.8,
+      "bb_pos": "⚪ dentro"
+    },
+    "DLTR": {
+      "prezzo": 114.0,
+      "rsi": 62.2,
+      "stoch_k": 88.6,
+      "stoch_d": 85.4,
+      "sup1": 112.03,
+      "res1": 116.677,
+      "supporti": [
+        112.03,
+        103.0
+      ],
+      "resistenze": [
+        116.677,
+        138.91
+      ],
+      "bb_inf": 84.985,
+      "bb_mid": 104.248,
+      "bb_sup": 123.511,
+      "bb_pct": 75.3,
+      "bb_pos": "⚪ dentro"
+    },
+    "PANW": {
+      "prezzo": 279.62,
+      "rsi": 64.8,
+      "stoch_k": 61.1,
+      "stoch_d": 52.6,
+      "sup1": 273.413,
+      "res1": 283.903,
+      "supporti": [
+        273.413,
+        267.207
+      ],
+      "resistenze": [
+        283.903,
+        288.187
+      ],
+      "bb_inf": 230.713,
+      "bb_mid": 265.698,
+      "bb_sup": 300.683,
+      "bb_pct": 69.9,
+      "bb_pos": "⚪ dentro"
+    },
+    "DDOG": {
+      "prezzo": 229.9,
+      "rsi": 57.6,
+      "stoch_k": 19.2,
+      "stoch_d": 23.9,
+      "sup1": 225.82,
+      "res1": 235.395,
+      "supporti": [
+        225.82,
+        221.74
+      ],
+      "resistenze": [
+        235.395,
+        240.89
+      ],
+      "bb_inf": 194.415,
+      "bb_mid": 231.403,
+      "bb_sup": 268.39,
+      "bb_pct": 48.0,
+      "bb_pos": "⚪ dentro"
+    }
+  },
+  "fondamentali": {
+    "GOOG": {
+      "nome": "Alphabet Inc.",
+      "settore": "Communication Services",
+      "pe": 27.32,
+      "pb": 9.06
+    },
+    "NTAP": {
+      "nome": "NetApp, Inc.",
+      "settore": "Technology",
+      "pe": 25.45,
+      "pb": 23.45
+    },
+    "RGTI": {
+      "nome": "Rigetti Computing, Inc.",
+      "settore": "Technology",
+      "pe": null,
+      "pb": 11.95
+    },
+    "PRY.MI": {
+      "nome": "Prysmian S.p.A.",
+      "settore": "Industrials",
+      "pe": 30.55,
+      "pb": 5.98
+    },
+    "LDO.MI": {
+      "nome": "Leonardo S.p.a.",
+      "settore": "Industrials",
+      "pe": 23.88,
+      "pb": 3.16
+    },
+    "DUOL": {
+      "nome": "Duolingo, Inc.",
+      "settore": "Technology",
+      "pe": 14.03,
+      "pb": 4.13
+    },
+    "HPQ": {
+      "nome": "HP Inc.",
+      "settore": "Technology",
+      "pe": 9.35,
+      "pb": -160.76
+    },
+    "IONQ": {
+      "nome": "IonQ, Inc.",
+      "settore": "Technology",
+      "pe": 148.33,
+      "pb": 4.34
+    },
+    "UAL": {
+      "nome": "United Airlines Holdings, Inc.",
+      "settore": "Industrials",
+      "pe": 10.33,
+      "pb": 2.36
+    },
+    "UNI.MI": {
+      "nome": "Unipol Assicurazioni S.p.A.",
+      "settore": "Financial Services",
+      "pe": 11.92,
+      "pb": 1.74
+    },
+    "DKNG": {
+      "nome": "DraftKings Inc.",
+      "settore": "Consumer Cyclical",
+      "pe": 322.22,
+      "pb": 23.77
+    },
+    "IBM": {
+      "nome": "International Business Machines Corporation",
+      "settore": "Technology",
+      "pe": 24.09,
+      "pb": 7.76
+    },
+    "BBY": {
+      "nome": "Best Buy Co., Inc.",
+      "settore": "Consumer Cyclical",
+      "pe": 14.54,
+      "pb": 5.37
+    },
+    "POOL": {
+      "nome": "Pool Corporation",
+      "settore": "Industrials",
+      "pe": 17.92,
+      "pb": 6.27
+    },
+    "NVDA": {
+      "nome": "NVIDIA Corporation",
+      "settore": "Technology",
+      "pe": 31.42,
+      "pb": 25.43
+    },
+    "BRO": {
+      "nome": "Brown & Brown, Inc.",
+      "settore": "Financial Services",
+      "pe": 19.54,
+      "pb": 1.6
+    },
+    "HPE": {
+      "nome": "Hewlett Packard Enterprise Company",
+      "settore": "Technology",
+      "pe": 45.02,
+      "pb": 2.52
+    },
+    "PSA": {
+      "nome": "Public Storage",
+      "settore": "Real Estate",
+      "pe": 33.67,
+      "pb": 11.74
+    },
+    "BABA": {
+      "nome": "Alibaba Group Holding Limited",
+      "settore": "Consumer Cyclical",
+      "pe": 17.36,
+      "pb": 1.67
+    },
+    "MSTR": {
+      "nome": "Strategy Inc",
+      "settore": "Technology",
+      "pe": null,
+      "pb": 1.17
+    },
+    "A": {
+      "nome": "Agilent Technologies, Inc.",
+      "settore": "Healthcare",
+      "pe": 26.02,
+      "pb": 5.15
+    },
+    "DLTR": {
+      "nome": "Dollar Tree, Inc.",
+      "settore": "Consumer Defensive",
+      "pe": 18.33,
+      "pb": 6.29
+    },
+    "PANW": {
+      "nome": "Palo Alto Networks, Inc.",
+      "settore": "Technology",
+      "pe": 243.15,
+      "pb": 8.22
+    },
+    "DDOG": {
+      "nome": "Datadog, Inc.",
+      "settore": "Technology",
+      "pe": 589.49,
+      "pb": 20.51
+    }
+  },
+  "news": {
+    "LDO.MI": {
+      "n": 0,
+      "media": null,
+      "label": "—",
+      "articoli": []
+    },
+    "NVDA": {
+      "n": 10,
+      "media": 0.0,
+      "label": "⚪ NEUTRO",
+      "articoli": [
+        {
+          "titolo": "AI trade is 'fantastic right now' and 'something you have to be in': Analyst",
+          "publisher": "Yahoo Finance Video",
+          "link": "https://finance.yahoo.com/video/ai-trade-fantastic-now-something-211500020.html",
+          "quando": "12/06 23:15",
+          "score": 0.0
+        },
+        {
+          "titolo": "SpaceX stock gains, space companies fall, chips mixed on IPO news",
+          "publisher": "Yahoo Finance Video",
+          "link": "https://finance.yahoo.com/video/spacex-stock-gains-space-companies-fall-chips-mixed-on-ipo-news-195735942.html",
+          "quando": "12/06 21:57",
+          "score": 0.0
+        },
+        {
+          "titolo": "SpaceX President Has Warning for Investors: Maybe You Shouldn’t Buy the Stock",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/06/13/spacex-president-has-warning-for-investors-maybe-you-shouldnt-buy-the-stock/",
+          "quando": "13/06 14:46",
+          "score": -0.05
+        },
+        {
+          "titolo": "3 High Backlog Defense Stocks to Buy in June",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/06/13/3-high-backlog-defense-stocks-to-buy-in-june/",
+          "quando": "13/06 14:30",
+          "score": 0.0
+        },
+        {
+          "titolo": "What 1,000 Shares of This High-Yield Dividend Stock Pays You Every Year",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/06/13/what-1000-shares-of-this-high-yield-dividend-stock-pays-you-every-year/",
+          "quando": "13/06 14:25",
+          "score": 0.0
+        },
+        {
+          "titolo": "Here's What the Estimated 2027 Social Security COLA Could Do to Average Benefits in Your State",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/retirement/2026/06/13/heres-what-the-estimated-2027-social-security-cola/",
+          "quando": "13/06 14:05",
+          "score": 0.0
+        },
+        {
+          "titolo": "Now Trading at Its Lowest Level Since December 2023, Is Solana a Buy, Sell, or Hold?",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/06/13/now-trading-at-its-lowest-level-since-december-202/",
+          "quando": "13/06 13:47",
+          "score": 0.0
+        },
+        {
+          "titolo": "Prediction: SoFi Technologies Stock Will Double Within 1 Year",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/06/13/prediction-sofi-technologies-stock-will-double-wit/",
+          "quando": "13/06 13:46",
+          "score": 0.0
+        },
+        {
+          "titolo": "If You Hate (Or Love) The ‘Mag 7’ There Is An ETF To Profit",
+          "publisher": "24/7 Wall St.",
+          "link": "https://247wallst.com/investing/2026/06/13/if-you-hate-or-love-the-mag-7-there-is-an-etf-to-profit/",
+          "quando": "13/06 13:45",
+          "score": 0.05
+        },
+        {
+          "titolo": "Nebius Just Grew Its Revenue 684%. There's More Growth Ahead, and the Stock Is a Genius Buy.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/06/13/nebius-just-grew-its-revenue-684-theres-more-growt/",
+          "quando": "13/06 13:45",
+          "score": 0.0
+        }
+      ]
+    },
+    "PRY.MI": {
+      "n": 0,
+      "media": null,
+      "label": "—",
+      "articoli": []
+    },
+    "MSTR": {
+      "n": 6,
+      "media": 0.008,
+      "label": "⚪ NEUTRO",
+      "articoli": [
+        {
+          "titolo": "Strategy now holds 845k bitcoin or 4% of total supply",
+          "publisher": "Yahoo Finance Video",
+          "link": "https://finance.yahoo.com/video/strategy-now-holds-845k-bitcoin-or-4-of-total-supply-174254410.html",
+          "quando": "12/06 19:42",
+          "score": 0.0
+        },
+        {
+          "titolo": "Bitcoin rebounds above $63,000 as Iran optimism boosts risk appetite",
+          "publisher": "Investing.com",
+          "link": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-rebounds-above-63-000-082546730.html",
+          "quando": "13/06 10:25",
+          "score": 0.05
+        },
+        {
+          "titolo": "Market Wrap: Bitcoin Stalls As SpaceX IPO Takes Centre Stage",
+          "publisher": "CryptoProwl",
+          "link": "https://www.cryptoprowl.com/releases/market-wrap-bitcoin-stalls-as-spacex-ipo-takes-centre-stage-5862",
+          "quando": "12/06 23:28",
+          "score": 0.0
+        },
+        {
+          "titolo": "A Look Back at Data Analytics Stocks’ Q1 Earnings: Strategy (NASDAQ:MSTR) Vs The Rest Of The Pack",
+          "publisher": "StockStory",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/look-back-data-analytics-stocks-201320354.html",
+          "quando": "12/06 22:13",
+          "score": 0.0
+        },
+        {
+          "titolo": "The SpaceX IPO Is Here. Time to Lift Off?",
+          "publisher": "Real Vision",
+          "link": "https://finance.yahoo.com/video/spacex-ipo-time-lift-off-145913550.html",
+          "quando": "12/06 16:59",
+          "score": 0.0
+        },
+        {
+          "titolo": "Standard Chartered Says Crypto Market Has Bottomed",
+          "publisher": "CryptoProwl",
+          "link": "https://www.cryptoprowl.com/releases/standard-chartered-says-crypto-market-has-bottomed-5858",
+          "quando": "12/06 15:45",
+          "score": 0.0
+        }
+      ]
+    },
+    "BABA": {
+      "n": 6,
+      "media": 0.017,
+      "label": "⚪ NEUTRO",
+      "articoli": [
+        {
+          "titolo": "Alibaba’s US$1.5b Pupu Bid Tests Local Commerce Ambitions",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/alibaba-us-1-5b-pupu-101003018.html",
+          "quando": "13/06 12:10",
+          "score": 0.0
+        },
+        {
+          "titolo": "Chinese AI from blacklisted tech giant used by Ministry of Justice",
+          "publisher": "The Telegraph",
+          "link": "https://uk.finance.yahoo.com/news/chinese-ai-blacklisted-tech-giant-055000523.html",
+          "quando": "13/06 07:50",
+          "score": 0.0
+        },
+        {
+          "titolo": "China 'strongly dissatisfied' with Pentagon move against top Chinese tech firms",
+          "publisher": "Reuters",
+          "link": "https://www.yahoo.com/news/politics/articles/china-strongly-dissatisfied-pentagon-move-024138252.html",
+          "quando": "13/06 04:41",
+          "score": 0.05
+        },
+        {
+          "titolo": "The Index Says Euphoria. But Don’t Panic.",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/euphoria-market-sentiment-stocks-can-keep-rising-preview-8e04fb58?siteid=yhoof2&yptr=yahoo",
+          "quando": "13/06 04:40",
+          "score": 0.0
+        },
+        {
+          "titolo": "BABA Makes $1.5B Play for Pupu Amid Regulatory Scrutiny: What's Ahead?",
+          "publisher": "Zacks",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/baba-makes-1-5b-play-140700553.html",
+          "quando": "12/06 16:07",
+          "score": 0.0
+        },
+        {
+          "titolo": "Alibaba's $1.5 Billion Pupu Bid Raises Stakes in Grocery War",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/alibabas-1-5-billion-pupu-125954328.html",
+          "quando": "12/06 14:59",
+          "score": 0.05
+        }
+      ]
+    },
+    "GOOG": {
+      "n": 10,
+      "media": 0.0,
+      "label": "⚪ NEUTRO",
+      "articoli": [
+        {
+          "titolo": "Strategy now holds 845k bitcoin or 4% of total supply",
+          "publisher": "Yahoo Finance Video",
+          "link": "https://finance.yahoo.com/video/strategy-now-holds-845k-bitcoin-or-4-of-total-supply-174254410.html",
+          "quando": "12/06 19:42",
+          "score": 0.0
+        },
+        {
+          "titolo": "Is the Trump Bull Market Coming to an End? The Evidence is Piling Up, and the Message is Strikingly Clear.",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/06/13/is-the-trump-bull-market-coming-to-an-end-the-evid/",
+          "quando": "13/06 12:35",
+          "score": 0.0
+        },
+        {
+          "titolo": "Gwyn Morgan: Apply some intelligence. AI won’t kill all jobs",
+          "publisher": "Financial Post",
+          "link": "https://financialpost.com/opinion/gwyn-morgan-apply-some-intelligence-ai-wont-kill-all-jobs",
+          "quando": "13/06 12:00",
+          "score": 0.0
+        },
+        {
+          "titolo": "Alphabet’s US$80 Billion AI Build‑Out Funding Might Change The Case For Investing In Alphabet (GOOGL)",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/alphabet-us-80-billion-ai-071812155.html",
+          "quando": "13/06 09:18",
+          "score": 0.0
+        },
+        {
+          "titolo": "Mark Zuckerberg admits Meta has 'made mistakes' as AI overhaul reshapes 20% of its workforce: report",
+          "publisher": "Fox Business",
+          "link": "https://www.foxbusiness.com/technology/mark-zuckerberg-admits-meta-made-mistakes-ai-overhaul-reshapes-workforce",
+          "quando": "13/06 04:44",
+          "score": 0.0
+        },
+        {
+          "titolo": "AI Stocks Underestimate the Technology’s Potential, Says This Tech Investor",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/ai-stocks-nvidia-asml-samsara-chips-a80912ab?siteid=yhoof2&yptr=yahoo",
+          "quando": "13/06 04:07",
+          "score": 0.0
+        },
+        {
+          "titolo": "Meet the 2 Newcomers Challenging the Cloud Computing Titans in Artificial Intelligence (AI)",
+          "publisher": "Motley Fool",
+          "link": "https://www.fool.com/investing/2026/06/12/meet-the-2-newcomers-challening-the-cloud-computin/",
+          "quando": "13/06 03:34",
+          "score": 0.0
+        },
+        {
+          "titolo": "Is the Turnaround at IBM Stock Finally Here to Stay?",
+          "publisher": "Trefis",
+          "link": "https://www.trefis.com/articles/602685/is-the-turnaround-at-ibm-stock-finally-here-to-stay/2026-06-12",
+          "quando": "13/06 01:32",
+          "score": 0.0
+        },
+        {
+          "titolo": "Does Google Stock Have More Upside?",
+          "publisher": "Trefis",
+          "link": "https://www.trefis.com/articles/602686/does-google-stock-have-more-upside/2026-06-12",
+          "quando": "13/06 01:08",
+          "score": 0.0
+        },
+        {
+          "titolo": "How Investors May Respond To Walmart (WMT) Expanding Wing Drone Network And Premium Grocery Push",
+          "publisher": "Simply Wall St.",
+          "link": "https://finance.yahoo.com/markets/stocks/articles/investors-may-respond-walmart-wmt-221553130.html",
+          "quando": "13/06 00:15",
+          "score": 0.0
+        }
+      ]
+    },
+    "IONQ": {
+      "n": 2,
+      "media": 0.0,
+      "label": "⚪ NEUTRO",
+      "articoli": [
+        {
+          "titolo": "The Quantum Race Is Heating Up, and Governments Worldwide Are Buying In",
+          "publisher": "Barrons.com",
+          "link": "https://www.barrons.com/articles/quantum-computing-stocks-ionq-dwave-c5869b80?siteid=yhoof2&yptr=yahoo",
+          "quando": "12/06 19:35",
+          "score": 0.0
+        },
+        {
+          "titolo": "Alphabet Reveals Why It Rejected Trump's $2 Billion Quantum Funding Program",
+          "publisher": "GuruFocus.com",
+          "link": "https://finance.yahoo.com/sectors/technology/articles/alphabet-reveals-why-rejected-trumps-130722406.html",
+          "quando": "12/06 15:07",
+          "score": 0.0
+        }
+      ]
+    }
+  },
+  "aggiornato": "2026-06-13 14:58"
+}
