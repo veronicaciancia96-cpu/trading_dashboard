@@ -1,7 +1,44 @@
 [
   {
+    "isin": "IT0003856405",
     "ticker": "LEONARDO",
-    "azioni": 100.0,
+    "azioni": 1400.0,
     "prezzo_carico": 55.0
+  },
+  {
+    "isin": "US67066G1040",
+    "ticker": "NVIDIA",
+    "azioni": 15.0,
+    "prezzo_carico": 0.0
+  },
+  {
+    "isin": "IT0004176001",
+    "ticker": "PRYSMIAN",
+    "azioni": 36.0,
+    "prezzo_carico": 0.0
+  },
+  {
+    "isin": "US5949724083",
+    "ticker": "MSTR",
+    "azioni": 6.0,
+    "prezzo_carico": 0.0
+  },
+  {
+    "isin": "US01609W1027",
+    "ticker": "ALIBABA",
+    "azioni": 40.0,
+    "prezzo_carico": 0.0
+  },
+  {
+    "isin": "US02079K3059",
+    "ticker": "ALPHABET",
+    "azioni": 14.0,
+    "prezzo_carico": 0.0
+  },
+  {
+    "isin": "US46222L1089",
+    "ticker": "IONQ",
+    "azioni": 55.0,
+    "prezzo_carico": 0.0
   }
 ]
