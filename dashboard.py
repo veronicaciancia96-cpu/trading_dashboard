@@ -446,31 +446,60 @@ def leggi_snapshot() -> dict:
     return {"risolti": {}, "metriche": {}, "fondamentali": {}, "news": {}, "aggiornato": None}
 
 
+def _risolvi_da_snapshot(isin: str, ticker: str) -> dict:
+    """Risoluzione robusta dallo snapshot: prova più chiavi e il ticker-come-simbolo."""
+    snap = leggi_snapshot()
+    ris_map = snap.get("risolti", {})
+    met = snap.get("metriche", {})
+    chiavi = [f"{isin}||{ticker}", f"||{ticker}", f"{isin}||",
+              f"{(isin or '').upper()}||{(ticker or '').upper()}"]
+    for k in chiavi:
+        if k in ris_map and ris_map[k].get("simbolo"):
+            return ris_map[k]
+    # Il ticker inserito è già un simbolo Yahoo presente nello snapshot?
+    if ticker and ticker.upper() in met:
+        return {"simbolo": ticker.upper(), "fonte": "snapshot (ticker)", "nome": ticker.upper()}
+    # Cerca un record che combaci per ISIN o ticker di origine
+    for v in ris_map.values():
+        if not v.get("simbolo"):
+            continue
+        if (isin and v.get("isin_src") == isin) or \
+           (ticker and (v.get("ticker_src", "") or "").upper() == ticker.upper()):
+            return v
+    return {"simbolo": None, "fonte": "snapshot mancante", "nome": ticker or isin}
+
+
 def acq_risoluzione(isin: str, ticker: str) -> dict:
-    if SOLO_VISUALIZZAZIONE:
-        snap = leggi_snapshot()
-        return snap.get("risolti", {}).get(
-            f"{isin}||{ticker}",
-            {"simbolo": None, "fonte": "snapshot mancante", "nome": ticker or isin})
-    return risolvi_simbolo(isin, ticker)
+    # Live (locale) → se fallisce o siamo in sola visualizzazione, snapshot.
+    if not SOLO_VISUALIZZAZIONE:
+        ris = risolvi_simbolo(isin, ticker)
+        if ris.get("simbolo"):
+            return ris
+    return _risolvi_da_snapshot(isin, ticker)
 
 
 def acq_metriche(sym: str) -> dict:
-    if SOLO_VISUALIZZAZIONE:
-        return leggi_snapshot().get("metriche", {}).get(sym, dict(_METRICHE_VUOTE))
-    return metriche_mercato(sym)
+    if not SOLO_VISUALIZZAZIONE:
+        m = metriche_mercato(sym)
+        if m.get("prezzo") is not None:
+            return m   # live ok
+    return leggi_snapshot().get("metriche", {}).get(sym, dict(_METRICHE_VUOTE))
 
 
 def acq_fondamentali(sym: str) -> dict:
-    if SOLO_VISUALIZZAZIONE:
-        return leggi_snapshot().get("fondamentali", {}).get(sym, dict(_FOND_VUOTI))
-    return fondamentali(sym)
+    if not SOLO_VISUALIZZAZIONE:
+        f = fondamentali(sym)
+        if f.get("nome") or f.get("pe") or f.get("pb") or f.get("settore"):
+            return f
+    return leggi_snapshot().get("fondamentali", {}).get(sym, dict(_FOND_VUOTI))
 
 
 def acq_news(sym: str) -> dict:
-    if SOLO_VISUALIZZAZIONE:
-        return leggi_snapshot().get("news", {}).get(sym, dict(_NEWS_VUOTE))
-    return news_sentiment(sym, ore=24)
+    if not SOLO_VISUALIZZAZIONE:
+        n = news_sentiment(sym, ore=24)
+        if n.get("n"):
+            return n
+    return leggi_snapshot().get("news", {}).get(sym) or dict(_NEWS_VUOTE)
 
 
 def genera_snapshot(max_opportunita: int = 50) -> dict:
@@ -488,7 +517,10 @@ def genera_snapshot(max_opportunita: int = 50) -> dict:
         isin_v = p.get("isin", "") or ""
         tick_v = p.get("ticker", "") or ""
         ris = risolvi_simbolo(isin_v, tick_v)
-        snap["risolti"][f"{isin_v}||{tick_v}"] = ris
+        ris = {**ris, "isin_src": isin_v, "ticker_src": tick_v}
+        # Salva la risoluzione sotto più chiavi → robusta a portafogli diversi
+        for k in {f"{isin_v}||{tick_v}", f"||{tick_v}", f"{isin_v}||"}:
+            snap["risolti"][k] = ris
         if ris.get("simbolo"):
             simboli.add(ris["simbolo"])
             snap["news"][ris["simbolo"]] = news_sentiment(ris["simbolo"], ore=24)
