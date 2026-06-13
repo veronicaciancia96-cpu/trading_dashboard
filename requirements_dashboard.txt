@@ -1,0 +1,5 @@
+streamlit>=1.30
+yfinance>=0.2.40
+pandas>=2.0
+vaderSentiment>=3.3.2
+requests>=2.28
