@@ -26,6 +26,7 @@ BASE_DIR       = os.path.dirname(os.path.abspath(__file__))
 DB_PATH        = os.path.join(BASE_DIR, "segnali.db")
 PORTFOLIO_PATH = os.path.join(BASE_DIR, "portafoglio.json")
 GUADAGNI_PATH  = os.path.join(BASE_DIR, "guadagni.json")
+SNAPSHOT_PATH  = os.path.join(BASE_DIR, "mercato_snapshot.json")
 
 st.set_page_config(page_title="Swing Trading Dashboard", page_icon="📈", layout="wide")
 
@@ -421,6 +422,94 @@ def _fmt_stoch(k, d):
 #  HEADER
 # ═══════════════════════════════════════════════════════════════════════
 
+# ═══════════════════════════════════════════════════════════════════════
+#  SNAPSHOT — disaccoppia il cloud da Yahoo (che blocca gli IP dei datacenter)
+#  Il proprietario genera lo snapshot in locale (dove Yahoo risponde) e lo
+#  committa; in modalità sola visualizzazione (cloud) i dati si leggono da qui.
+# ═══════════════════════════════════════════════════════════════════════
+
+_METRICHE_VUOTE = {"prezzo": None, "rsi": None, "stoch_k": None, "stoch_d": None,
+                   "sup1": None, "res1": None, "supporti": [], "resistenze": [],
+                   "bb_inf": None, "bb_mid": None, "bb_sup": None, "bb_pct": None, "bb_pos": "—"}
+_FOND_VUOTI = {"nome": None, "settore": None, "pe": None, "pb": None}
+_NEWS_VUOTE = {"n": 0, "media": None, "label": "—", "articoli": []}
+
+
+@st.cache_data(ttl=30, show_spinner=False)
+def leggi_snapshot() -> dict:
+    if os.path.exists(SNAPSHOT_PATH):
+        try:
+            with open(SNAPSHOT_PATH, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            pass
+    return {"risolti": {}, "metriche": {}, "fondamentali": {}, "news": {}, "aggiornato": None}
+
+
+def acq_risoluzione(isin: str, ticker: str) -> dict:
+    if SOLO_VISUALIZZAZIONE:
+        snap = leggi_snapshot()
+        return snap.get("risolti", {}).get(
+            f"{isin}||{ticker}",
+            {"simbolo": None, "fonte": "snapshot mancante", "nome": ticker or isin})
+    return risolvi_simbolo(isin, ticker)
+
+
+def acq_metriche(sym: str) -> dict:
+    if SOLO_VISUALIZZAZIONE:
+        return leggi_snapshot().get("metriche", {}).get(sym, dict(_METRICHE_VUOTE))
+    return metriche_mercato(sym)
+
+
+def acq_fondamentali(sym: str) -> dict:
+    if SOLO_VISUALIZZAZIONE:
+        return leggi_snapshot().get("fondamentali", {}).get(sym, dict(_FOND_VUOTI))
+    return fondamentali(sym)
+
+
+def acq_news(sym: str) -> dict:
+    if SOLO_VISUALIZZAZIONE:
+        return leggi_snapshot().get("news", {}).get(sym, dict(_NEWS_VUOTE))
+    return news_sentiment(sym, ore=24)
+
+
+def genera_snapshot(max_opportunita: int = 50) -> dict:
+    """
+    Esegue tutte le chiamate Yahoo IN LOCALE e salva i risultati in
+    mercato_snapshot.json. Da committare su GitHub: il cloud li mostrerà
+    senza chiamare Yahoo (che blocca gli IP dei datacenter).
+    """
+    snap = {"risolti": {}, "metriche": {}, "fondamentali": {}, "news": {},
+            "aggiornato": datetime.now().strftime("%Y-%m-%d %H:%M")}
+    simboli = set()
+
+    # ── Portafoglio: risoluzione + news per ogni posizione ──────────────
+    for p in carica_portafoglio():
+        isin_v = p.get("isin", "") or ""
+        tick_v = p.get("ticker", "") or ""
+        ris = risolvi_simbolo(isin_v, tick_v)
+        snap["risolti"][f"{isin_v}||{tick_v}"] = ris
+        if ris.get("simbolo"):
+            simboli.add(ris["simbolo"])
+            snap["news"][ris["simbolo"]] = news_sentiment(ris["simbolo"], ore=24)
+
+    # ── Opportunità: simboli dell'ultimo run (già ticker Yahoo) ─────────
+    dfg = carica_segnali()
+    if not dfg.empty:
+        ult = dfg[dfg["data_segnale"] == dfg["data_segnale"].max()]
+        for t in ult.drop_duplicates(subset=["ticker"])["ticker"].head(max_opportunita):
+            simboli.add(t)
+
+    # ── Metriche + fondamentali per tutti i simboli ─────────────────────
+    for s in simboli:
+        snap["metriche"][s] = metriche_mercato(s)
+        snap["fondamentali"][s] = fondamentali(s)
+
+    with open(SNAPSHOT_PATH, "w", encoding="utf-8") as f:
+        json.dump(snap, f, indent=2, ensure_ascii=False)
+    return snap
+
+
 st.title("📈 Swing Trading Dashboard")
 df_seg = carica_segnali()
 
@@ -432,11 +521,31 @@ with c1:
     else:
         st.caption("⚠️ Nessun segnale trovato in segnali.db")
 with c2:
-    st.caption("📡 Fonte dati di mercato: **Yahoo Finance** · news ≤ 24h")
+    if SOLO_VISUALIZZAZIONE:
+        _ts = leggi_snapshot().get("aggiornato")
+        st.caption(f"📸 Dati da snapshot del **{_ts}**" if _ts
+                   else "📸 Snapshot dati non ancora generato dal proprietario")
+    else:
+        st.caption("📡 Fonte dati di mercato: **Yahoo Finance** · news ≤ 24h (live)")
 with c3:
     if st.button("🔄 Aggiorna", use_container_width=True):
         st.cache_data.clear()
         st.rerun()
+
+# ── Generazione snapshot (solo proprietario, in locale) ─────────────────
+if not SOLO_VISUALIZZAZIONE:
+    with st.expander("📸 Genera snapshot per il socio (da fare in locale, poi carica su GitHub)"):
+        st.caption("Scarica da Yahoo Finance tutti i dati di portafoglio e opportunità e li "
+                   "salva in `mercato_snapshot.json`. Carica quel file su GitHub: il socio "
+                   "(modalità sola visualizzazione sul cloud) vedrà questi dati senza che il "
+                   "cloud debba interrogare Yahoo.")
+        if st.button("📸 Genera/aggiorna snapshot ora"):
+            with st.spinner("Scarico i dati da Yahoo Finance e creo lo snapshot…"):
+                snap = genera_snapshot()
+            st.success(f"Snapshot creato ({snap['aggiornato']}): "
+                       f"{len(snap['metriche'])} titoli, {len(snap['risolti'])} risoluzioni. "
+                       f"Ora carica `mercato_snapshot.json` su GitHub.")
+            st.cache_data.clear()
 
 tab_opp, tab_port = st.tabs(["🔮 Opportunità", "💼 Portafoglio"])
 
@@ -486,8 +595,8 @@ with tab_opp:
                 righe = []
                 for _, r in d.iterrows():
                     tk = r["ticker"]
-                    m = metriche_mercato(tk)
-                    fz = fondamentali(tk)
+                    m = acq_metriche(tk)
+                    fz = acq_fondamentali(tk)
                     righe.append({
                         "Ticker": tk,
                         "Nome": fz["nome"] or tk,
@@ -630,7 +739,7 @@ with tab_port:
                 carico = float(p.get("prezzo_carico") or 0)
 
                 # ── Risoluzione simbolo ufficiale (ISIN preferito) ──────────
-                ris = risolvi_simbolo(isin_v, tick_v)
+                ris = acq_risoluzione(isin_v, tick_v)
                 sym = ris["simbolo"]
                 if sym is None:
                     non_risolti.append(etichetta)
@@ -647,8 +756,8 @@ with tab_port:
                     })
                     continue
 
-                m = metriche_mercato(sym)
-                ns = news_sentiment(sym, ore=24)
+                m = acq_metriche(sym)
+                ns = acq_news(sym)
                 news_per_ticker[f"{etichetta} ({sym})"] = ns
                 attuale = m["prezzo"]
 
